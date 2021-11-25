@@ -1,6 +1,6 @@
 # Princípios SOLID
 
-## Definições
+## Definição
 
 Os princípios SOLID, estabelecidos pelo engenheiro de softwares Robert C. Martin (conhecido como "Uncle Bob"), consistem em princípios visando não só deixar o código mais orgazinado e enxuto como também facilitar para futuras expanções no código, tornando, assim, o trabalho do programador bem mais simples. Tais princípios são:
 
