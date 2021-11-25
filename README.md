@@ -14,3 +14,4 @@ Pelas definições dos princípios acima, especialmente do LSP e do DIP, é poss
 
 ## Exemplo
 
+(WIP)
