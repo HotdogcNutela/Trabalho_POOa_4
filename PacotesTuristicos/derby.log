@@ -1,0 +1,14 @@
+Fri Nov 12 17:04:07 BRT 2021 : Apache Derby Servidor de Rede - 10.14.2.0 - (1828579) iniciado e pronto para aceitar conexões na porta 1527 em {3}
+----------------------------------------------------------------
+Fri Nov 12 17:14:03 BRT 2021:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instância a816c00e-017d-15c0-08ce-00000000002e
+no diretório de banco de dados C:\Users\user1\Desktop\Facul\Arquivos_JAVA\Trabalho2\PacotesTuristicos\PacotesTuristicos 
+
+java.vendor=Oracle Corporation
+java.runtime.version=16.0.2+7-67
+user.dir=C:\Users\user1\Desktop\Facul\Arquivos_JAVA\Trabalho2\PacotesTuristicos
+os.name=Windows 8.1
+os.arch=amd64
+os.version=6.3
+derby.system.home=.
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+    <head>
+        <title th:text="#{pacotes.listar.titulo}">Lista de Pacotes</title>
+    </head>
+
+    <body>
+        <div th:replace="fragments/alert"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th><a th:href="@{/pacotes/listar?order=agencia.nome}" th:text="#{pacotes.listar.agencia.nome}">Agencia</a></th>
+                    <th><a th:href="@{/pacotes/listar?order=destino}" th:text="#{pacotes.listar.destino}">Destino</a></th>
+                    <th><a th:href="@{/pacotes/listar?order=dataPartida}" th:text="#{pacotes.listar.dataPartida}">Data de Partida</a></th>
+                    <th th:text="#{pacotes.listar.duracao}">Duracao</th>
+                    <th th:text="#{pacotes.listar.valor}">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="pacote : ${pacotes}">
+                    <td th:text="${pacote.id}"></td>
+                    <td th:text="${pacote.agencia.nome}"></td>
+                    <td th:text="${pacote.destino}"></td>
+                    <td th:text="${pacote.dataPartida}"></td>
+                    <td th:text="${pacote.duracao}"></td>
+                    <td th:text="${pacote.valor}"></td>
+                    <td colspan="2">
+                        <div sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_CLIENTE')">
+                            
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table><br /><br />
+        
+        <a th:href="@{/home}" th:text="#{pacotes.listar.link.home}">Voltar ao Menu Principal</a>
+    </body>
+</html>

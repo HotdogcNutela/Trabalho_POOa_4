@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+    <head>
+        <title th:text="#{compras.cadastrar.titulo}">Lista de Pacotes a Venda</title>
+    </head>
+
+    <body>
+        <div th:replace="fragments/alert"></div>
+        <form th:action="@{/compras/salvar}" th:object="${compra}" method="POST">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th th:text="#{pacotes.listar.agencia.nome}">Agencia</th>
+                    <th th:text="#{pacotes.listar.destino}">Destino</th>
+                    <th th:text="#{pacotes.listar.dataPartida}">Data de Partida</th>
+                    <th th:text="#{pacotes.listar.duracao}">Duracao</th>
+                    <th th:text="#{pacotes.listar.valor}">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="pacote : ${pacotes}">
+                    <td>
+                        <input type="radio" th:id="${pacote.id}" name="pacote" th:value="${pacote.id}" th:field="*{pacote}" required />
+                    </td>
+                    <td th:text="${pacote.agencia.nome}"></td>
+                    <td th:text="${pacote.destino}"></td>
+                    <td th:text="${pacote.dataPartida}"></td>
+                    <td th:text="${pacote.duracao}"></td>
+                    <td th:text="${pacote.valor}"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+            <input type="hidden" id="cliente" th:field="*{cliente}" />
+            <input type="hidden" id="dataCompra" th:field="*{dataCompra}" />
+
+            <button type="submit" th:text="#{compras.cadastrar.submit}">Comprar pacote selecionado</button>
+
+        </form>
+        <br />
+
+        <a th:href="@{/home}" th:text="#{compras.cadastrar.link.home}">Voltar ao Menu Principal</a>
+    </body>
+</html>

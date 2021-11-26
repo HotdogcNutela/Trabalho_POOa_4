@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+    <head>
+        <title th:text="#{compras.listar.titulo}">Lista de Pacotes</title>
+    </head>
+
+    <body>
+        <div th:replace="fragments/alert"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th th:text="#{compras.listar.dataCompra}">Data da Compra</th>
+                    <th th:text="#{pacotes.listar.agencia.nome}">Agencia</th>
+                    <th th:text="#{pacotes.listar.destino}">Destino</th>
+                    <th th:text="#{pacotes.listar.dataPartida}">Data de Partida</th>
+                    <th th:text="#{pacotes.listar.duracao}">Duracao</th>
+                    <th th:text="#{pacotes.listar.valor}">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="compra : ${compras}">
+                    <td th:text="${compra.id}"></td>
+                    <td th:text="${compra.dataCompra}"></td>
+                    <td th:text="${compra.pacote.agencia.nome}"></td>
+                    <td th:text="${compra.pacote.destino}"></td>
+                    <td th:text="${compra.pacote.dataPartida}"></td>
+                    <td th:text="${compra.pacote.duracao}"></td>
+                    <td th:text="${compra.pacote.valor}"></td>
+                    <td colspan="2">
+                        <div sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_CLIENTE')">
+                            <a th:href="@{/compras/excluir/{id} (id=${compra.id})}" th:text="#{compras.listar.link.compras.excluir}">Cancelar compra</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table><br />
+
+        <a th:href="@{/home}" th:text="#{compras.listar.link.home}">Voltar ao Menu Principal</a>
+    </body>
+</html>
