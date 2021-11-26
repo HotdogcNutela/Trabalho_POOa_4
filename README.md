@@ -23,3 +23,8 @@ Enquanto isso, cada interface DAO é encarregada de administrar uma entidade dif
 
 ![Diagrama2](https://github.com/HotdogcNutela/Trabalho_POOa_4/blob/main/Esquema%20DAO.png)
 
+Após a implementação das classes Service, é possível fazer os [controladores](https://github.com/HotdogcNutela/Trabalho_POOa_4/tree/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/controller) para as classes de entidade, contanto que os controladores utilizem as classes Service necessárias. No caso da entidade Cliente, tanto [ClienteController](https://github.com/HotdogcNutela/Trabalho_POOa_4/blob/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/controller/ClienteController.java) quanto [PacoteController](https://github.com/HotdogcNutela/Trabalho_POOa_4/blob/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/controller/PacoteController.java) utilizam ClienteService, o qual é referenciado nos controladores como a interface IClienteControler. Por fim, a estrutura do projeto até aqui deve ser semelhante ao diagrama abaixo.
+
+![Diagrama3](https://github.com/HotdogcNutela/Trabalho_POOa_4/blob/main/Esquema%20DAO_3.png)
+
+Com o término da descrição de parte do projeto, é possível observar que os códigos apresentados obedecem aos princípios SOLID
