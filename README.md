@@ -14,4 +14,6 @@ Pelas definições dos princípios acima, especialmente do LSP e do DIP, é poss
 
 ## Exemplo
 
-(WIP)
+Como exemplo, será utilizado o projeto de um programa Web de compra e venda de pacotes turísticos. Este sistema, apesar de ter sido feito para o curso de Desenvolvimento Web, possui detalhes importantes ao assunto desse trabalho, já que o projeto em questão obedece aos princípios SOLID. O exemplo tratará apenas dos esquemas arquiteturais DAO e Service para torná-lo mais coeso.
+Começando pelo esquema DAO, percebe-se que tal esquema é formado, inicialmente, pelas classes do tipo entidade, localizadas [nesta pasta](https://github.com/HotdogcNutela/Trabalho_POOa_4/tree/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/domain) e pelas interfaces do tipo DAO, localizadas [nesta pasta](https://github.com/HotdogcNutela/Trabalho_POOa_4/tree/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/dao). As classes do tipo entidade dependem da classe abstrata [AbstractEntity](https://github.com/HotdogcNutela/Trabalho_POOa_4/tree/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/domain), o que impede cada classe entidade de ser dependente de outras classes entidade. A estrutura do projeto, até então, pode ser representado pelo diagrama abaixo.
+![Diagrama1]()
