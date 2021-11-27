@@ -1,4 +1,5 @@
 # Princípios SOLID
+Por Marcus Vinícius Soares de Oliveira (RA 770026).
 
 ## Definição
 
@@ -27,4 +28,21 @@ Após a implementação das classes Service, é possível fazer os [controladore
 
 ![Diagrama3](https://github.com/HotdogcNutela/Trabalho_POOa_4/blob/main/Esquema%20DAO_3.png)
 
-Com o término da descrição de parte do projeto, é possível observar que os códigos apresentados obedecem aos princípios SOLID
+Com o término da descrição de parte do projeto, é importante observar se o exemplo obedece aos princípios SOLID. Para isto, os códigos serão analisados com base em um princípio por vez:
+
+- **SRP**: Com excessão de [AbstractEntity](https://github.com/HotdogcNutela/Trabalho_POOa_4/tree/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/domain), todas as classes e interfaces possuem uma única responsabilidade, cada uma restrita para uma única entidade, sendo que:
+  - As interfaces do tipo DAO cuidam, de modo direto, do acesso de dados da entidade a qual são designadas;
+  - As classes e consequentemente as interfaces do tipo Service tornam o acesso ao DAO de certa entidade mais seguro, além de poderem ser expandidos sem afetar a interface DAO;
+  - Os Controllers são encarregados de controlar os serviços de uma entidade específica dependendo das ações realizadas na parte da Visão do projeto;
+- **OCP**: Se for necessária a inclusão de uma nova classe do tipo entidade, basta criar as interfaces do tipo DAO e Service e as classes do tipo Service e Controller, específicas à nova classe e seguindo uma estrutura semelhante à de Cliente, sem a necessidade de alterar as outras classes e interfaces do projeto;
+- **LSP**: Na pasta [domain](https://github.com/HotdogcNutela/Trabalho_POOa_4/tree/main/PacotesTuristicos/src/main/java/br/ufscar/dc/dsw/domain), quaisquer classes não-abstratas podem ser referenciadas como sua classe base AbstractEntity, embora não tenha sido necessário neste projeto. Todavia, as classes do tipo Service podem ser referenciadas como suas interfaces do tipo Service, o que acaba ocorrendo nas classes do tipo Controller;
+- **ISP**: Tanto as interfaces DAO quanto as interfaces Service cuidam do acesso de dados de certa forma. No entanto, as interfaces DAO realizam seu objetivo de forma diferente das interfaces Service, além de serem restritos a uma entidade cada. Sendo assim, fica mais fácil realizar alterações no código de uma interface sem precisar alterar no das demais;
+- **DIP**: Todas as alterações relacionadas às entidades são realizadas por meio das interfaces do tipo DAO e do tipo Service, cada uma delas específicas à cada entidade em questão. Isso se torna vantajoso às classes do tipo Controller, visto que para fazer alterações em uma entidade basta utilizar a interface do tipo Service responsável por tal entidade.
+
+Após as análises acima, conclui-se que o exemplo obedece aos princípios SOLID.
+
+## Conclusão
+
+Embora aparentam ser complicados, os princípios SOLID acabam tornando os programas mais simples e seguros de serem não só criados como também expandidos, afirmação comprovada pelas análises do exemplo citado neste artigo. Logo, estes princípios são muito importantes para a elaboração de programas orientados a objeto decentes.
+
+
